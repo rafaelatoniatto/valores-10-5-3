@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valores 10 | 5 | 3 - exercício de identificação e reflexão sobre valores pessoais">
+  <title>Valores 10 | 5 | 3</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">AUTOCONHECIMENTO • VALORES</span>
+      <h1>Valores 10 | 5 | 3</h1>
+      <p>
+        Identifique os valores centrais que orientam suas decisões, sua liderança
+        e sua vida. Não é o que você acha bonito. É o que você vive.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="instructions card">
+      <span class="eyebrow dark-eyebrow">MÉTODO 10 • 5 • 3</span>
+
+      <h2>Escolha, reduza e reflita</h2>
+
+      <p>
+        Primeiro, escolha 10 valores importantes para você. Depois, reduza para
+        5 valores inegociáveis e, por fim, escolha os 3 que realmente representam
+        aquilo que você não abre mão de viver.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <strong>10</strong>
+          <span>Valores importantes</span>
+        </div>
+
+        <div class="step">
+          <strong>5</strong>
+          <span>Valores inegociáveis</span>
+        </div>
+
+        <div class="step">
+          <strong>3</strong>
+          <span>Valores essenciais</span>
+        </div>
+      </div>
+    </section>
+
+    <form id="valuesForm" novalidate>
+
+      <section class="card name-card">
+        <label for="name">
+          Nome <span class="required">*</span>
+        </label>
+
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Seu nome"
+          autocomplete="name"
+        >
+
+        <div id="nameError" class="error-msg">
+          Digite seu nome.
+        </div>
+      </section>
+
+      <section id="step1" class="test-step active">
+        <div class="step-heading">
+          <span class="eyebrow">PASSO 1</span>
+          <h2>Escolha os 10 valores importantes para sua vida</h2>
+          <p>
+            Não pense demais. Escolha os valores que fazem sentido para você hoje.
+          </p>
+          <div class="counter">
+            <strong id="selected10Count">0</strong> / 10 selecionados
+          </div>
+        </div>
+
+        <div id="valuesGrid" class="values-grid"></div>
+
+        <div class="other-value">
+          <label for="otherValue">Outro valor</label>
+
+          <div class="other-row">
+            <input
+              id="otherValue"
+              type="text"
+              maxlength="25"
+              placeholder="Digite apenas 1 palavra"
+              autocomplete="off"
+            >
+
+            <button type="button" id="addOtherButton" class="small-button">
+              ADICIONAR
+            </button>
+          </div>
+
+          <small>
+            Use este campo somente se o valor que você procura não estiver na lista.
+          </small>
+
+          <div id="otherError" class="error-msg"></div>
+        </div>
+
+        <div id="step1Message" class="validation-message" hidden></div>
+
+        <div class="actions">
+          <button type="button" id="continueTo5" class="primary-button">
+            CONTINUAR PARA OS 5 <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="step2" class="test-step" hidden>
+        <div class="step-heading">
+          <span class="eyebrow">PASSO 2</span>
+          <h2>Agora, reduza para 5 valores</h2>
+          <p>
+            Se você tivesse que abrir mão de 5, quais valores permaneceriam?
+            Escolha somente os 5 que são inegociáveis.
+          </p>
+          <div class="counter">
+            <strong id="selected5Count">0</strong> / 5 selecionados
+          </div>
+        </div>
+
+        <div id="selected10Grid" class="selection-grid"></div>
+
+        <div id="step2Message" class="validation-message" hidden></div>
+
+        <div class="actions">
+          <button type="button" id="backTo10" class="outline-button">
+            ← VOLTAR
+          </button>
+
+          <button type="button" id="continueTo3" class="primary-button">
+            CONTINUAR PARA OS 3 <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="step3" class="test-step" hidden>
+        <div class="step-heading">
+          <span class="eyebrow">PASSO 3</span>
+          <h2>Agora, escolha os 3 finais</h2>
+          <p>
+            Se tudo fosse tirado de você e só pudessem permanecer 3 valores,
+            quais seriam? Reflita no que realmente move você.
+          </p>
+          <div class="counter">
+            <strong id="selected3Count">0</strong> / 3 selecionados
+          </div>
+        </div>
+
+        <div id="selected5Grid" class="selection-grid"></div>
+
+        <div id="step3Message" class="validation-message" hidden></div>
+
+        <div class="actions">
+          <button type="button" id="backTo5" class="outline-button">
+            ← VOLTAR
+          </button>
+
+          <button type="button" id="continueToReflection" class="primary-button">
+            CONTINUAR PARA REFLEXÃO <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="step4" class="test-step" hidden>
+        <div class="step-heading">
+          <span class="eyebrow">PASSO 4</span>
+          <h2>Reflexão escrita</h2>
+          <p>
+            Para cada um dos seus 3 valores finais, responda às quatro perguntas
+            com sinceridade. Não existe resposta certa.
+          </p>
+        </div>
+
+        <div id="reflectionContainer"></div>
+
+        <div id="step4Message" class="validation-message" hidden></div>
+
+        <div class="actions">
+          <button type="button" id="backTo3" class="outline-button">
+            ← VOLTAR
+          </button>
+
+          <button type="button" id="continueToIntegration" class="primary-button">
+            CONTINUAR <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="step5" class="test-step" hidden>
+        <div class="step-heading">
+          <span class="eyebrow">PASSO 5</span>
+          <h2>Integração final</h2>
+          <p>
+            Agora conecte seus 3 valores com a forma como você está vivendo hoje.
+          </p>
+        </div>
+
+        <section class="integration-card">
+          <label for="alignment">
+            Minhas decisões atuais estão alinhadas com esses valores?
+            <span class="required">*</span>
+          </label>
+
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="alignment" value="Sim">
+              Sim
+            </label>
+
+            <label>
+              <input type="radio" name="alignment" value="Parcialmente">
+              Parcialmente
+            </label>
+
+            <label>
+              <input type="radio" name="alignment" value="Não">
+              Não
+            </label>
+          </div>
+
+          <label for="alignmentReason">
+            Se não ou parcialmente, por quê?
+            <span class="required">*</span>
+          </label>
+
+          <textarea
+            id="alignmentReason"
+            rows="5"
+            placeholder="Escreva sua reflexão..."
+          ></textarea>
+        </section>
+
+        <div id="step5Message" class="validation-message" hidden></div>
+
+        <div class="actions">
+          <button type="button" id="backToReflection" class="outline-button">
+            ← VOLTAR
+          </button>
+
+          <button type="button" id="showResult" class="primary-button">
+            VER MEU RESULTADO <span>→</span>
+          </button>
+        </div>
+      </section>
+
+    </form>
+
+    <section id="resultSection" class="result-section" hidden>
+
+      <div class="result-header">
+        <span class="eyebrow">SEU RESULTADO</span>
+        <h2>Seus 3 Valores Essenciais</h2>
+        <p id="resultGreeting"></p>
+      </div>
+
+      <div id="finalValues" class="final-values"></div>
+
+      <div class="result-block">
+        <div class="result-block-heading">
+          <span class="eyebrow dark-eyebrow">REFLEXÃO</span>
+          <h3>O que esses valores significam para você</h3>
+        </div>
+
+        <div id="reflectionResults" class="reflection-results"></div>
+      </div>
+
+      <div class="result-block integration-result">
+        <div class="result-block-heading">
+          <span class="eyebrow dark-eyebrow">INTEGRAÇÃO FINAL</span>
+          <h3>Alinhamento com a sua vida atual</h3>
+        </div>
+
+        <div id="alignmentResult"></div>
+      </div>
+
+      <div class="result-actions">
+        <button type="button" id="printButton" class="secondary-button">
+          IMPRIMIR MEU RESULTADO
+        </button>
+
+        <button type="button" id="restartButton" class="outline-button">
+          REFAZER TESTE
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Claudia Demétrio</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
